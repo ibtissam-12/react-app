@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const handleTasbihClick = () => {
+    setCount(prev => prev + 1);
+  };
+
+  const resetCount = () => {
+    setCount(0);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>🕋 Tasbih Digital</h1>
+      <div className="counter-circle">
+        <span className="counter-number">{count}</span>
+      </div>
+      <button className="tasbih-btn" onClick={handleTasbihClick}>
+        📿 Compter
+      </button>
+      <button className="reset-btn" onClick={resetCount}>
+        🔄 Réinitialiser
+      </button>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
